@@ -45,14 +45,15 @@
     }
     
     .dashboard-container {
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 30px;
+      width: 95%; /* Increased from max-width to width */
+      margin: 20px auto; /* Reduced margin */
+      padding: 20px; /* Reduced padding */
       position: relative;
       background: rgba(255, 255, 255, 0.95);
       border-radius: 30px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(10px);
+      min-height: 90vh; /* Added minimum height */
     }
 
     .floating-elements {
@@ -82,110 +83,18 @@
       50% { transform: translateY(-20px) rotate(5deg); }
     }
 
-    .decorative-side {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      color: var(--primary-color);
-    }
-
-    .decorative-left { left: -120px; }
-    .decorative-right { right: -120px; }
-
-    .icon-container {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(145deg, #ffffff, #f0f0f0);
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
-                  -5px -5px 15px rgba(255, 255, 255, 0.8);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .icon-container::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-      transform: translateX(-100%);
-      transition: 0.5s;
-    }
-
-    .icon-container:hover::before {
-      transform: translateX(100%);
-    }
-
-    .icon-container:hover {
-      transform: translateY(-5px);
-      box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.15),
-                  -7px -7px 20px rgba(255, 255, 255, 1);
-    }
-
-    .icon-container i {
-      font-size: 28px;
-      background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .vertical-line {
-      width: 3px;
-      height: 100px;
-      background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
-      border-radius: 3px;
-      position: relative;
-    }
-
-    .vertical-line::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -2px;
-      width: 7px;
-      height: 7px;
-      background: var(--primary-color);
-      border-radius: 50%;
-    }
-    
     .dashboard-iframe {
       width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
+      height: calc(90vh - 100px); /* Adjusted height calculation */
       position: relative;
       border: none;
       background: white;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
+      padding-bottom: 0; /* Removed padding-bottom */
     }
 
-    .dashboard-iframe::before {
-      content: '';
-      position: absolute;
-      top: -10%;
-      left: -10%;
-      width: 120%;
-      height: 120%;
-      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-      animation: shine 3s infinite;
-    }
-
-    @keyframes shine {
-      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-    }
-    
     .dashboard-iframe iframe {
       position: absolute;
       top: 0;
@@ -197,15 +106,15 @@
 
     .dashboard-header {
       text-align: center;
-      margin-bottom: 30px;
-      padding: 20px;
+      margin-bottom: 20px; /* Reduced margin */
+      padding: 10px; /* Reduced padding */
       position: relative;
     }
 
     .dashboard-title {
-      font-size: 36px;
+      font-size: 32px; /* Reduced font size */
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -214,113 +123,32 @@
       display: inline-block;
     }
 
-    .dashboard-title::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-    }
-
     .dashboard-subtitle {
-      font-size: 18px;
+      font-size: 16px; /* Reduced font size */
       color: var(--secondary-color);
       position: relative;
       display: inline-block;
       padding: 0 20px;
     }
 
-    .dashboard-subtitle::before,
-    .dashboard-subtitle::after {
-      content: '•';
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--accent-color);
-    }
-
-    .dashboard-subtitle::before { left: 0; }
-    .dashboard-subtitle::after { right: 0; }
-
-    .corner-decoration {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      pointer-events: none;
-    }
-
-    .corner-tl {
-      top: 0;
-      left: 0;
-      border-top: 3px solid rgba(33, 87, 50, 0.2);
-      border-left: 3px solid rgba(33, 87, 50, 0.2);
-      border-radius: 20px 0 0 0;
-    }
-
-    .corner-tr {
-      top: 0;
-      right: 0;
-      border-top: 3px solid rgba(33, 87, 50, 0.2);
-      border-right: 3px solid rgba(33, 87, 50, 0.2);
-      border-radius: 0 20px 0 0;
-    }
-
-    .corner-bl {
-      bottom: 0;
-      left: 0;
-      border-bottom: 3px solid rgba(33, 87, 50, 0.2);
-      border-left: 3px solid rgba(33, 87, 50, 0.2);
-      border-radius: 0 0 0 20px;
-    }
-
-    .corner-br {
-      bottom: 0;
-      right: 0;
-      border-bottom: 3px solid rgba(33, 87, 50, 0.2);
-      border-right: 3px solid rgba(33, 87, 50, 0.2);
-      border-radius: 0 0 20px 0;
-    }
-
-    .decorative-dots {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: var(--primary-color);
-      border-radius: 50%;
-      opacity: 0.2;
-    }
-
-    .dot-1 { top: 20px; left: 20px; }
-    .dot-2 { top: 20px; right: 20px; }
-    .dot-3 { bottom: 20px; left: 20px; }
-    .dot-4 { bottom: 20px; right: 20px; }
-
-    @media (max-width: 1600px) {
-      .decorative-side {
-        display: none;
-      }
+    /* Remove decorative sides for larger dashboard */
+    .decorative-side {
+      display: none;
     }
 
     @media (max-width: 767px) {
+      .dashboard-container {
+        width: 98%;
+        margin: 10px auto;
+        padding: 10px;
+      }
+      
       .dashboard-title {
         font-size: 24px;
       }
       
       .dashboard-iframe {
-        padding-bottom: 75%;
-      }
-      
-      .dashboard-container {
-        padding: 15px;
-        margin: 10px;
-      }
-
-      .corner-decoration {
-        width: 80px;
-        height: 80px;
+        height: calc(85vh - 80px);
       }
     }
   </style>
@@ -328,7 +156,6 @@
 <body>
   <div class="background-pattern"></div>
   <div class="dashboard-container">
-    <!-- Floating elements -->
     <div class="floating-elements">
       <i class="fas fa-plane floating-icon" style="font-size: 24px;"></i>
       <i class="fas fa-map-marker-alt floating-icon" style="font-size: 24px;"></i>
@@ -336,51 +163,9 @@
       <i class="fas fa-globe floating-icon" style="font-size: 24px;"></i>
     </div>
 
-    <!-- Corner decorations -->
-    <div class="corner-decoration corner-tl"></div>
-    <div class="corner-decoration corner-tr"></div>
-    <div class="corner-decoration corner-bl"></div>
-    <div class="corner-decoration corner-br"></div>
-
-    <!-- Decorative dots -->
-    <div class="decorative-dots dot-1"></div>
-    <div class="decorative-dots dot-2"></div>
-    <div class="decorative-dots dot-3"></div>
-    <div class="decorative-dots dot-4"></div>
-
     <div class="dashboard-header">
       <div class="dashboard-title">Dashboard Migratorio Colombia</div>
       <div class="dashboard-subtitle">Análisis de Flujos Migratorios</div>
-    </div>
-
-    <!-- Decorative left side -->
-    <div class="decorative-side decorative-left">
-      <div class="icon-container">
-        <i class="fas fa-globe-americas"></i>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="icon-container">
-        <i class="fas fa-users"></i>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="icon-container">
-        <i class="fas fa-chart-line"></i>
-      </div>
-    </div>
-
-    <!-- Decorative right side -->
-    <div class="decorative-side decorative-right">
-      <div class="icon-container">
-        <i class="fas fa-passport"></i>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="icon-container">
-        <i class="fas fa-map-marked-alt"></i>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="icon-container">
-        <i class="fas fa-handshake"></i>
-      </div>
     </div>
 
     <div class="dashboard-iframe">
