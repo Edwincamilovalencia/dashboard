@@ -3,46 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Dashboard Migratorio</title>
   
   <!-- Bootstrap CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   
   <style>
+    :root {
+      --primary-color: #2E7D32;
+      --secondary-color: #4CAF50;
+      --accent-color: #81C784;
+      --bg-color: #F1F8E9;
+    }
+
     body {
-      background-color: #f5f5f5;
+      background-color: var(--bg-color);
       margin: 0;
       padding: 0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
     .dashboard-container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 20px;
       flex: 1;
       width: 100%;
+      position: relative;
     }
-    
-    .dashboard-title {
-      font-size: 32px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #333;
-      text-align: center;
+
+    .decorative-side {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      color: var(--primary-color);
+      opacity: 0.8;
+    }
+
+    .decorative-left {
+      left: -120px;
+    }
+
+    .decorative-right {
+      right: -120px;
+    }
+
+    .icon-container {
+      width: 60px;
+      height: 60px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .icon-container:hover {
+      transform: scale(1.1);
+    }
+
+    .icon-container i {
+      font-size: 24px;
+      color: var(--primary-color);
+    }
+
+    .vertical-line {
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
     }
     
     .dashboard-iframe {
       width: 100%;
       height: 0;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      padding-bottom: 56.25%;
       position: relative;
       border: none;
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
     
@@ -54,34 +105,123 @@
       height: 100%;
       border: none;
     }
+
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--primary-color);
+    }
+
+    .dashboard-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .dashboard-subtitle {
+      font-size: 18px;
+      color: var(--secondary-color);
+    }
     
-    /* Loading indicator */
     .loading {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      color: #666;
+      color: var(--primary-color);
+    }
+
+    .decorative-corner {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      opacity: 0.1;
+    }
+
+    .corner-tl {
+      top: -20px;
+      left: -20px;
+      border-top: 4px solid var(--primary-color);
+      border-left: 4px solid var(--primary-color);
+      border-radius: 15px 0 0 0;
+    }
+
+    .corner-br {
+      bottom: -20px;
+      right: -20px;
+      border-bottom: 4px solid var(--primary-color);
+      border-right: 4px solid var(--primary-color);
+      border-radius: 0 0 15px 0;
     }
     
+    @media (max-width: 1600px) {
+      .decorative-side {
+        display: none;
+      }
+    }
+
     @media (max-width: 767px) {
       .dashboard-title {
         font-size: 24px;
       }
       
       .dashboard-iframe {
-        padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
+        padding-bottom: 75%;
       }
       
       .dashboard-container {
         padding: 10px;
+      }
+
+      .decorative-corner {
+        width: 50px;
+        height: 50px;
       }
     }
   </style>
 </head>
 <body>
   <div class="dashboard-container">
+    <div class="dashboard-header">
+      <div class="dashboard-title">Dashboard Migratorio Colombia</div>
+      <div class="dashboard-subtitle">Análisis de Flujos Migratorios</div>
+    </div>
+
+    <!-- Decorative left side -->
+    <div class="decorative-side decorative-left">
+      <div class="icon-container">
+        <i class="fas fa-globe-americas"></i>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="icon-container">
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="icon-container">
+        <i class="fas fa-chart-line"></i>
+      </div>
+    </div>
+
+    <!-- Decorative right side -->
+    <div class="decorative-side decorative-right">
+      <div class="icon-container">
+        <i class="fas fa-passport"></i>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="icon-container">
+        <i class="fas fa-map-marked-alt"></i>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="icon-container">
+        <i class="fas fa-handshake"></i>
+      </div>
+    </div>
+
+    <!-- Decorative corners -->
+    <div class="decorative-corner corner-tl"></div>
+    <div class="decorative-corner corner-br"></div>
+
     <div class="dashboard-iframe">
       <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" title="Power BI Dashboard"></iframe>
       <div class="loading">
