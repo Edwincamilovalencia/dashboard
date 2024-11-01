@@ -12,7 +12,7 @@
   
   <style>
     :root {
-      --primary-color: #2E7D32;
+      --primary-color: #215732;
       --secondary-color: #4CAF50;
       --accent-color: #81C784;
       --bg-color: #F1F8E9;
@@ -35,6 +35,9 @@
       flex: 1;
       width: 100%;
       position: relative;
+      background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(241,248,233,0.9));
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
 
     .decorative-side {
@@ -47,7 +50,6 @@
       align-items: center;
       gap: 30px;
       color: var(--primary-color);
-      opacity: 0.8;
     }
 
     .decorative-left {
@@ -59,30 +61,39 @@
     }
 
     .icon-container {
-      width: 60px;
-      height: 60px;
-      background: white;
-      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(145deg, #ffffff, #f0f0f0);
+      border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
+                  -5px -5px 15px rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
     }
 
     .icon-container:hover {
-      transform: scale(1.1);
+      transform: translateY(-5px);
+      box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.15),
+                  -7px -7px 20px rgba(255, 255, 255, 1);
     }
 
     .icon-container i {
-      font-size: 24px;
-      color: var(--primary-color);
+      font-size: 28px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .vertical-line {
-      width: 2px;
+      width: 3px;
       height: 100px;
-      background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+      background: linear-gradient(to bottom, 
+        transparent, 
+        rgba(33, 87, 50, 0.3), 
+        transparent);
+      border-radius: 3px;
     }
     
     .dashboard-iframe {
@@ -92,8 +103,8 @@
       position: relative;
       border: none;
       background: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
       overflow: hidden;
     }
     
@@ -109,50 +120,46 @@
     .dashboard-header {
       text-align: center;
       margin-bottom: 30px;
-      color: var(--primary-color);
+      padding: 20px;
+      position: relative;
     }
 
     .dashboard-title {
       font-size: 32px;
       font-weight: bold;
       margin-bottom: 10px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .dashboard-subtitle {
       font-size: 18px;
       color: var(--secondary-color);
     }
-    
-    .loading {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: var(--primary-color);
-    }
 
     .decorative-corner {
       position: absolute;
-      width: 100px;
-      height: 100px;
-      opacity: 0.1;
+      width: 120px;
+      height: 120px;
+      opacity: 0.2;
     }
 
     .corner-tl {
-      top: -20px;
-      left: -20px;
-      border-top: 4px solid var(--primary-color);
-      border-left: 4px solid var(--primary-color);
-      border-radius: 15px 0 0 0;
+      top: -10px;
+      left: -10px;
+      border-top: 5px solid var(--primary-color);
+      border-left: 5px solid var(--primary-color);
+      border-radius: 20px 0 0 0;
     }
 
     .corner-br {
-      bottom: -20px;
-      right: -20px;
-      border-bottom: 4px solid var(--primary-color);
-      border-right: 4px solid var(--primary-color);
-      border-radius: 0 0 15px 0;
+      bottom: -10px;
+      right: -10px;
+      border-bottom: 5px solid var(--primary-color);
+      border-right: 5px solid var(--primary-color);
+      border-radius: 0 0 20px 0;
     }
     
     @media (max-width: 1600px) {
@@ -172,11 +179,12 @@
       
       .dashboard-container {
         padding: 10px;
+        margin: 10px;
       }
 
       .decorative-corner {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
       }
     }
   </style>
@@ -224,11 +232,6 @@
 
     <div class="dashboard-iframe">
       <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" title="Power BI Dashboard"></iframe>
-      <div class="loading">
-        <div class="spinner-border text-primary" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
     </div>
   </div>
 </body>
