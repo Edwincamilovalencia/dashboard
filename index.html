@@ -1,123 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Migratorio</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link href="styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Migratorio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Existing Content -->
+    <div class="background-pattern"></div>
+    <div class="dashboard-container">
+        <!-- Floating elements -->
+        <div class="floating-elements">
+            <i class="fas fa-plane floating-icon" style="font-size: 24px;"></i>
+            <i class="fas fa-map-marker-alt floating-icon" style="font-size: 24px;"></i>
+            <i class="fas fa-compass floating-icon" style="font-size: 24px;"></i>
+            <i class="fas fa-globe floating-icon" style="font-size: 24px;"></i>
+        </div>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Dashboard Migratorio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#inicio">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#analisis">Análisis</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#estadisticas">Estadísticas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <!-- Corner decorations -->
+        <div class="corner-decoration corner-tl"></div>
+        <div class="corner-decoration corner-tr"></div>
+        <div class="corner-decoration corner-bl"></div>
+        <div class="corner-decoration corner-br"></div>
 
-  <!-- Background Pattern -->
-  <div class="background-pattern"></div>
-  
-  <!-- Dashboard Container -->
-  <div class="dashboard-container">
-    
-    <!-- Floating elements -->
-    <div class="floating-elements">
-      <i class="fas fa-plane floating-icon" style="font-size: 24px;"></i>
-      <i class="fas fa-map-marker-alt floating-icon" style="font-size: 24px;"></i>
-      <i class="fas fa-compass floating-icon" style="font-size: 24px;"></i>
-      <i class="fas fa-globe floating-icon" style="font-size: 24px;"></i>
-    </div>
+        <!-- Decorative dots -->
+        <div class="decorative-dots dot-1"></div>
+        <div class="decorative-dots dot-2"></div>
+        <div class="decorative-dots dot-3"></div>
+        <div class="decorative-dots dot-4"></div>
 
-    <!-- Corner decorations -->
-    <div class="corner-decoration corner-tl"></div>
-    <div class="corner-decoration corner-tr"></div>
-    <div class="corner-decoration corner-bl"></div>
-    <div class="corner-decoration corner-br"></div>
+        <div class="dashboard-header">
+            <div class="dashboard-title">Dashboard Migratorio Colombia</div>
+            <div class="dashboard-subtitle">Análisis de Flujos Migratorios</div>
+        </div>
 
-    <!-- Decorative dots -->
-    <div class="decorative-dots dot-1"></div>
-    <div class="decorative-dots dot-2"></div>
-    <div class="decorative-dots dot-3"></div>
-    <div class="decorative-dots dot-4"></div>
+        <!-- Decorative left side -->
+        <div class="decorative-side decorative-left">
+            <div class="icon-container">
+                <i class="fas fa-globe-americas"></i>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="icon-container">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="icon-container">
+                <i class="fas fa-chart-line"></i>
+            </div>
+        </div>
 
-    <!-- Dashboard Header -->
-    <div class="dashboard-header">
-      <div class="dashboard-title">Dashboard Migratorio Colombia</div>
-      <div class="dashboard-subtitle">Análisis de Flujos Migratorios</div>
-    </div>
+        <!-- Decorative right side -->
+        <div class="decorative-side decorative-right">
+            <div class="icon-container">
+                <i class="fas fa-passport"></i>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="icon-container">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="icon-container">
+                <i class="fas fa-handshake"></i>
+            </div>
+        </div>
 
-    <!-- Decorative left side -->
-    <div class="decorative-side decorative-left">
-      <div class="icon-container">
-        <i class="fas fa-globe-americas"></i>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="icon-container">
-        <i class="fas fa-users"></i>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="icon-container">
-        <i class="fas fa-chart-line"></i>
-      </div>
+        <div class="dashboard-iframe">
+            <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" title="Power BI Dashboard"></iframe>
+        </div>
     </div>
 
-    <!-- Decorative right side -->
-    <div class="decorative-side decorative-right">
-      <div class="icon-container">
-        <i class="fas fa-passport"></i>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="icon-container">
-        <i class="fas fa-map-marked-alt"></i>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="icon-container">
-        <i class="fas fa-handshake"></i>
-      </div>
-    </div>
-
-    <!-- Project Description -->
-    <section id="inicio" class="p-5 text-center">
-      <div class="container">
-        <h2>Bienvenido al Dashboard Migratorio de Colombia</h2>
-        <p class="lead">Explora los patrones de flujo migratorio en Colombia a través de datos interactivos. Este dashboard ofrece una visión detallada de las entradas y salidas, analizando las tendencias y cambios en el tiempo.</p>
-      </div>
+    <!-- New Section for Introduction -->
+    <section class="intro-section text-center bg-light py-5">
+        <div class="container">
+            <h1>Explora los Datos de Migración en Colombia</h1>
+            <p class="lead">Obtén información detallada sobre los flujos migratorios en Colombia, incluyendo patrones de entrada, nacionalidades principales, y análisis estacionales.</p>
+            <div class="d-flex justify-content-center mt-4">
+                <a href="#" class="btn btn-danger btn-lg me-3">Ver Detalles</a>
+                <a href="#" class="btn btn-outline-dark btn-lg"><i class="fas fa-play-circle"></i> Ver Video</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Dashboard Iframe -->
-    <div class="dashboard-iframe">
-      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" title="Power BI Dashboard"></iframe>
-    </div>
-    
-  </div>
+    <!-- New Section for Features -->
+    <section class="features-section bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Beneficios del Dashboard</h2>
+                    <p>Accede a un análisis detallado de la entrada de extranjeros, patrones de temporada y mucho más, todo a un clic de distancia.</p>
+                    <a href="#" class="btn btn-outline-light">Saber más</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-sm-6 mb-4">
+                            <i class="fas fa-briefcase fa-2x text-danger mb-3"></i>
+                            <h4>Datos Precisos</h4>
+                            <p>Basado en información real de migración para decisiones informadas.</p>
+                        </div>
+                        <div class="col-sm-6 mb-4">
+                            <i class="fas fa-chart-bar fa-2x text-danger mb-3"></i>
+                            <h4>Análisis Profundo</h4>
+                            <p>Explora tendencias y patrones en los flujos de migración.</p>
+                        </div>
+                        <div class="col-sm-6 mb-4">
+                            <i class="fas fa-calendar-alt fa-2x text-danger mb-3"></i>
+                            <h4>Análisis Estacional</h4>
+                            <p>Conoce cómo cambian los flujos migratorios durante el año.</p>
+                        </div>
+                        <div class="col-sm-6 mb-4">
+                            <i class="fas fa-user-friends fa-2x text-danger mb-3"></i>
+                            <h4>Segmentación</h4>
+                            <p>Análisis de migrantes por nacionalidad, género y más.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Bootstrap JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JavaScript and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
