@@ -13,51 +13,64 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Sección: Quiénes Somos -->
-    <section class="about-section text-white text-center py-5" style="background-color: #003366;">
-        <div class="container">
-            <h1>Quiénes Somos</h1>
-            <p class="lead">Somos un equipo dedicado a proporcionar análisis detallado sobre flujos migratorios en Colombia. Nuestra misión es ofrecer información confiable y fácil de interpretar para apoyar la toma de decisiones informadas.</p>
+    <!-- Existing Content -->
+    <div class="background-pattern"></div>
+    <div class="dashboard-container">
+        <!-- Floating elements -->
+        <div class="floating-elements">
+            <i class="fas fa-plane floating-icon" style="font-size: 24px;"></i>
+            <i class="fas fa-map-marker-alt floating-icon" style="font-size: 24px;"></i>
+            <i class="fas fa-compass floating-icon" style="font-size: 24px;"></i>
+            <i class="fas fa-globe floating-icon" style="font-size: 24px;"></i>
         </div>
-    </section>
 
-    <!-- Sección: Qué Hacemos -->
-    <section class="services-section text-center bg-light py-5">
-        <div class="container">
-            <h2>Qué Hacemos</h2>
-            <p class="lead">Ofrecemos una plataforma de análisis visual para explorar datos de migración y tendencias migratorias en Colombia.</p>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <i class="fas fa-database fa-3x text-primary mb-3"></i>
-                    <h4>Gestión de Datos</h4>
-                    <p>Recopilamos y organizamos datos migratorios para facilitar su interpretación.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="fas fa-chart-pie fa-3x text-primary mb-3"></i>
-                    <h4>Análisis Visual</h4>
-                    <p>Visualizamos patrones en flujos migratorios a través de gráficos interactivos.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="fas fa-user-shield fa-3x text-primary mb-3"></i>
-                    <h4>Privacidad y Seguridad</h4>
-                    <p>Nos aseguramos de que los datos sean manejados con la más alta seguridad y confidencialidad.</p>
-                </div>
+        <!-- Corner decorations -->
+        <div class="corner-decoration corner-tl"></div>
+        <div class="corner-decoration corner-tr"></div>
+        <div class="corner-decoration corner-bl"></div>
+        <div class="corner-decoration corner-br"></div>
+
+        <div class="dashboard-header">
+            <div class="dashboard-title">Dashboard Migratorio Colombia</div>
+            <div class="dashboard-subtitle">Análisis de Flujos Migratorios</div>
+        </div>
+
+        <!-- Decorative left side -->
+        <div class="decorative-side decorative-left">
+            <div class="icon-container">
+                <i class="fas fa-globe-americas"></i>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="icon-container">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="icon-container">
+                <i class="fas fa-chart-line"></i>
             </div>
         </div>
-    </section>
 
-    <!-- Sección: Dashboard Migratorio -->
-    <section class="dashboard-section text-center py-5" style="background-color: #002244;">
-        <div class="container">
-            <h2 class="text-white">Dashboard Migratorio Colombia</h2>
-            <p class="text-white-50">Explora los datos de migración en Colombia de una forma interactiva y visualmente atractiva.</p>
-            <div class="dashboard-iframe mt-4">
-                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" title="Power BI Dashboard" style="width: 100%; height: 500px; border: 2px solid #ccc; border-radius: 10px;"></iframe>
+        <!-- Decorative right side -->
+        <div class="decorative-side decorative-right">
+            <div class="icon-container">
+                <i class="fas fa-passport"></i>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="icon-container">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="icon-container">
+                <i class="fas fa-handshake"></i>
             </div>
         </div>
-    </section>
 
-    <!-- New Section for Features -->
+        <div class="dashboard-iframe">
+            <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" title="Power BI Dashboard"></iframe>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
     <section class="features-section bg-dark text-white py-5">
         <div class="container">
             <div class="row">
@@ -93,6 +106,40 @@
             </div>
         </div>
     </section>
+
+    <!-- New About Section -->
+    <section class="about-section py-5" style="background-color: #215732;">
+        <div class="container text-white">
+            <h2 class="text-center mb-4">Acerca del Dashboard</h2>
+            <p class="text-center">Este dashboard está diseñado para proveer un análisis detallado de los movimientos migratorios en Colombia, facilitando la toma de decisiones y el análisis estratégico en políticas migratorias.</p>
+            <div class="row mt-4 text-center">
+                <div class="col-md-4">
+                    <i class="fas fa-database fa-3x mb-3"></i>
+                    <h4>Datos Actuales</h4>
+                    <p>Basado en los datos más recientes disponibles.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-cogs fa-3x mb-3"></i>
+                    <h4>Actualización Automática</h4>
+                    <p>Datos actualizados periódicamente.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-user-shield fa-3x mb-3"></i>
+                    <h4>Privacidad y Seguridad</h4>
+                    <p>Diseñado con altos estándares de seguridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer class="contact-section bg-secondary text-white py-4">
+        <div class="container text-center">
+            <h4>Contáctanos</h4>
+            <p>Para más información, preguntas o sugerencias, ¡contáctanos!</p>
+            <a href="mailto:info@dashboardmigratorio.com" class="btn btn-outline-light">Enviar un Correo</a>
+        </div>
+    </footer>
 
     <!-- Bootstrap JavaScript and dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
