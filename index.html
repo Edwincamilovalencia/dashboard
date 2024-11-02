@@ -13,8 +13,39 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dashboard Migratorio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#analisis">Análisis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#estadisticas">Estadísticas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Background Pattern -->
   <div class="background-pattern"></div>
+  
+  <!-- Dashboard Container -->
   <div class="dashboard-container">
+    
     <!-- Floating elements -->
     <div class="floating-elements">
       <i class="fas fa-plane floating-icon" style="font-size: 24px;"></i>
@@ -35,6 +66,7 @@
     <div class="decorative-dots dot-3"></div>
     <div class="decorative-dots dot-4"></div>
 
+    <!-- Dashboard Header -->
     <div class="dashboard-header">
       <div class="dashboard-title">Dashboard Migratorio Colombia</div>
       <div class="dashboard-subtitle">Análisis de Flujos Migratorios</div>
@@ -70,9 +102,22 @@
       </div>
     </div>
 
+    <!-- Project Description -->
+    <section id="inicio" class="p-5 text-center">
+      <div class="container">
+        <h2>Bienvenido al Dashboard Migratorio de Colombia</h2>
+        <p class="lead">Explora los patrones de flujo migratorio en Colombia a través de datos interactivos. Este dashboard ofrece una visión detallada de las entradas y salidas, analizando las tendencias y cambios en el tiempo.</p>
+      </div>
+    </section>
+
+    <!-- Dashboard Iframe -->
     <div class="dashboard-iframe">
       <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" title="Power BI Dashboard"></iframe>
     </div>
+    
   </div>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
