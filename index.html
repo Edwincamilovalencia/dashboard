@@ -7,252 +7,9 @@
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #215732;
-            --secondary-color: #4CAF50;
-            --accent-color: #81C784;
-            --bg-color: #F1F8E9;
-            --gradient-start: #215732;
-            --gradient-end: #4CAF50;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: linear-gradient(135deg, var(--bg-color) 0%, #ffffff 100%);
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .background-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20px 20px, rgba(33, 87, 50, 0.1) 2px, transparent 0),
-                radial-gradient(circle at 40px 40px, rgba(33, 87, 50, 0.05) 2px, transparent 0);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .navbar {
-            background: rgba(33, 87, 50, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: 0.3s;
-            padding: 1rem 0;
-        }
-
-        .navbar-brand {
-            color: white !important;
-            font-weight: 600;
-        }
-
-        .nav-link {
-            color: white !important;
-            margin: 0 1rem;
-            position: relative;
-            font-weight: 500;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--accent-color);
-            transition: width 0.3s;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        section {
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            background: url('https://definicion.de/wp-content/uploads/2008/11/mapa.jpg') no-repeat center center/cover;
-            overflow: hidden;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Sombra oscura para mejorar el contraste */
-            z-index: 1;
-            backdrop-filter: blur(8px); /* Difuminar el fondo */
-        }
-
-
-        .hero-content {
-            position: relative;
-            z-index: 2; /* Asegura que el contenido esté por encima del overlay */
-            text-align: left; /* Alinear el texto a la izquierda */
-            padding: 2rem; /* Espaciado interno */
-            color: white; /* Color del texto blanco para contraste */
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        .team-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            height: 100%;
-        }
-
-        .team-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .team-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 2rem auto;
-            overflow: hidden;
-            border: 5px solid var(--accent-color);
-        }
-
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            border: 2px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn-custom {
-            background: linear-gradient(45deg, #215732, #4CAF50); /* Color de botón */
-            color: white;
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            color: white;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            height: 100%;
-            transition: transform 0.3s;
-            border: 1px solid rgba(129, 199, 132, 0.2);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 2rem;
-        }
-
-        .dashboard-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            position: relative;
-        }
-
-        .dashboard-iframe {
-            width: 100%;
-            height: 80vh;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 3rem 0;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin: 0 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .social-link:hover {
-            background: var(--accent-color);
-            transform: translateY(-3px);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .floating-icon {
-            position: absolute;
-            color: rgba(255, 255, 255, 0.1);
-            animation: float 6s infinite;
-            font-size: 2rem;
-        }
-    </style>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background-pattern"></div>
@@ -300,7 +57,7 @@
                     </button>
                 </div>
                 <div class="col-lg-6">
-                    <img src="https://definicion.de/wp-content/uploads/2008/11/mapa.jpg" alt="Dashboard Preview" class="img-fluid rounded-3 shadow-lg">
+                    
                 </div>
             </div>
         </div>
@@ -316,9 +73,18 @@
                         <div class="team-image">
                             <img src="/api/placeholder/150/150" alt="Team Member" class="img-fluid">
                         </div>
-                        <h4>Ana García</h4>
-                        <p class="text-muted">Directora de Análisis</p>
-                        <p class="px-4">Especialista en análisis de datos migratorios y tendencias demográficas.</p>
+                        <h4>Edwin Camilo Valencia Bustamante</h4>
+                        <p class="text-muted">Ingeniero de Sistemas y Telecomunicaciones</p>
+                        <p class="px-4">Apasionado por transformar ideas en soluciones innovadoras que mejoren la vida cotidiana.</p>
+                    </div>
+                </div>
+                                <!-- Iconos flotantes -->
+                <div class="col-md-4 text-center">
+                    <div class="icon-wrapper">
+                        <i class="bi bi-airplane-engines" style="font-size: 60px; color: #007bff; position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);"></i>
+                        <i class="bi bi-people" style="font-size: 50px; color: #28a745; position: absolute; top: 30%; left: 20%;"></i>
+                        <i class="bi bi-gear" style="font-size: 50px; color: #dc3545; position: absolute; top: 50%; left: 80%;"></i>
+                        <i class="bi bi-lightbulb" style="font-size: 50px; color: #ffc107; position: absolute; top: 80%; left: 30%;"></i>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -326,19 +92,9 @@
                         <div class="team-image">
                             <img src="/api/placeholder/150/150" alt="Team Member" class="img-fluid">
                         </div>
-                        <h4>Carlos Rodríguez</h4>
-                        <p class="text-muted">Desarrollador Principal</p>
-                        <p class="px-4">Experto en visualización de datos y desarrollo de dashboards.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="team-card text-center">
-                        <div class="team-image">
-                            <img src="/api/placeholder/150/150" alt="Team Member" class="img-fluid">
-                        </div>
-                        <h4>María Martínez</h4>
-                        <p class="text-muted">Analista de Datos</p>
-                        <p class="px-4">Especialista en estadísticas migratorias y análisis predictivo.</p>
+                        <h4>Juan Felipe Marin Romero</h4>
+                        <p class="text-muted">Ingeniero de Sistemas y Telecomunicaciones</p>
+                        <p class="px-4">Entusiasta de buscar maneras de utilizar la tecnología para conectar personas y crear un impacto positivo en la sociedad.</p>
                     </div>
                 </div>
             </div>
@@ -446,22 +202,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Smooth scroll function
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Navbar shrink on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-shrink');
-            } else {
-                navbar.classList.remove('navbar-shrink');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
