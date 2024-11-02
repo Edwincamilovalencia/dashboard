@@ -207,7 +207,7 @@ section {
 }
 
 .dashboard-container {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(104, 199, 128, 0.95);
     border-radius: 30px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
@@ -256,4 +256,17 @@ footer {
     color: rgba(255, 255, 255, 0.1);
     animation: float 6s infinite;
     font-size: 2rem;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column; /* Apila los iconos uno encima del otro */
+}
+
+.icon-container i {
+  margin-bottom: 10px; /* Espacio entre los iconos */
+}
+
+.icon-container .bi {
+  color: black; /* Cambiar color a negro */
 }
