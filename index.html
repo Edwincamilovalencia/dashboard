@@ -1,117 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Migratorio</title>
+    <title>Dashboard Migratorio Colombia</title>
     
-    <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="styles.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(26, 35, 126, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .navbar-shrink {
+            padding: 0.5rem 0;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin: 0 1rem;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dashboard-section {
+            background-color: #f8f9fa;
+        }
+
+        .features-section {
+            background-color: white;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .floating-icon {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .icon-1 { top: 10%; left: 10%; font-size: 3rem; }
+        .icon-2 { top: 20%; right: 15%; font-size: 4rem; animation-delay: 1s; }
+        .icon-3 { bottom: 15%; left: 15%; font-size: 3.5rem; animation-delay: 2s; }
+        .icon-4 { bottom: 20%; right: 10%; font-size: 2.5rem; animation-delay: 3s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .dashboard-iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: #1a237e;
+            color: white;
+            padding: 3rem 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- Existing Content -->
-    <div class="background-pattern"></div>
-    <div class="dashboard-container">
-        <!-- Floating elements -->
-        <div class="floating-elements">
-            <i class="fas fa-plane floating-icon" style="font-size: 24px;"></i>
-            <i class="fas fa-map-marker-alt floating-icon" style="font-size: 24px;"></i>
-            <i class="fas fa-compass floating-icon" style="font-size: 24px;"></i>
-            <i class="fas fa-globe floating-icon" style="font-size: 24px;"></i>
-        </div>
-
-        <!-- Corner decorations -->
-        <div class="corner-decoration corner-tl"></div>
-        <div class="corner-decoration corner-tr"></div>
-        <div class="corner-decoration corner-bl"></div>
-        <div class="corner-decoration corner-br"></div>
-
-        <!-- Decorative dots -->
-        <div class="decorative-dots dot-1"></div>
-        <div class="decorative-dots dot-2"></div>
-        <div class="decorative-dots dot-3"></div>
-        <div class="decorative-dots dot-4"></div>
-
-        <div class="dashboard-header">
-            <div class="dashboard-title">Dashboard Migratorio Colombia</div>
-            <div class="dashboard-subtitle">Análisis de Flujos Migratorios</div>
-        </div>
-
-        <!-- Decorative left side -->
-        <div class="decorative-side decorative-left">
-            <div class="icon-container">
-                <i class="fas fa-globe-americas"></i>
-            </div>
-            <div class="vertical-line"></div>
-            <div class="icon-container">
-                <i class="fas fa-users"></i>
-            </div>
-            <div class="vertical-line"></div>
-            <div class="icon-container">
-                <i class="fas fa-chart-line"></i>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="javascript:void(0)">
+                <i class="fas fa-globe-americas me-2"></i>
+                Dashboard Migratorio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('inicio')">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('dashboard')">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('beneficios')">Beneficios</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <!-- Decorative right side -->
-        <div class="decorative-side decorative-right">
-            <div class="icon-container">
-                <i class="fas fa-passport"></i>
-            </div>
-            <div class="vertical-line"></div>
-            <div class="icon-container">
-                <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <div class="vertical-line"></div>
-            <div class="icon-container">
-                <i class="fas fa-handshake"></i>
-            </div>
-        </div>
-
-        <div class="dashboard-iframe">
-            <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" title="Power BI Dashboard"></iframe>
-        </div>
-    </div>
-    <!-- New Section for Features -->
-    <section class="features-section bg-dark text-white py-5">
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <i class="fas fa-globe floating-icon icon-1"></i>
+        <i class="fas fa-plane floating-icon icon-2"></i>
+        <i class="fas fa-map-marker-alt floating-icon icon-3"></i>
+        <i class="fas fa-passport floating-icon icon-4"></i>
+        
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h2>Beneficios del Dashboard</h2>
-                    <p>Accede a un análisis detallado de la entrada de extranjeros, patrones de temporada y mucho más, todo a un clic de distancia.</p>
-                    <a href="#" class="btn btn-outline-light">Saber más</a>
+                <div class="col-lg-8 hero-content">
+                    <h1 class="display-4 fw-bold mb-4">Dashboard Migratorio Colombia</h1>
+                    <p class="lead mb-4">Explora y analiza los patrones migratorios de Colombia con nuestra herramienta interactiva de visualización de datos</p>
+                    <button onclick="scrollToSection('dashboard')" class="btn btn-light btn-lg px-4">
+                        Explorar Dashboard <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
                 </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-sm-6 mb-4">
-                            <i class="fas fa-briefcase fa-2x text-danger mb-3"></i>
-                            <h4>Datos Precisos</h4>
-                            <p>Basado en información real de migración para decisiones informadas.</p>
-                        </div>
-                        <div class="col-sm-6 mb-4">
-                            <i class="fas fa-chart-bar fa-2x text-danger mb-3"></i>
-                            <h4>Análisis Profundo</h4>
-                            <p>Explora tendencias y patrones en los flujos de migración.</p>
-                        </div>
-                        <div class="col-sm-6 mb-4">
-                            <i class="fas fa-calendar-alt fa-2x text-danger mb-3"></i>
-                            <h4>Análisis Estacional</h4>
-                            <p>Conoce cómo cambian los flujos migratorios durante el año.</p>
-                        </div>
-                        <div class="col-sm-6 mb-4">
-                            <i class="fas fa-user-friends fa-2x text-danger mb-3"></i>
-                            <h4>Segmentación</h4>
-                            <p>Análisis de migrantes por nacionalidad, género y más.</p>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Dashboard Interactivo</h2>
+            <div class="dashboard-iframe">
+                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="beneficios" class="features-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Beneficios del Dashboard</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-briefcase fa-2x text-primary mb-3"></i>
+                        <h4>Datos Precisos</h4>
+                        <p>Información real y actualizada para toma de decisiones informadas</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-chart-bar fa-2x text-primary mb-3"></i>
+                        <h4>Análisis Profundo</h4>
+                        <p>Explora tendencias y patrones en los flujos migratorios</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-calendar-alt fa-2x text-primary mb-3"></i>
+                        <h4>Análisis Estacional</h4>
+                        <p>Conoce las variaciones de flujos durante el año</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-user-friends fa-2x text-primary mb-3"></i>
+                        <h4>Segmentación</h4>
+                        <p>Analiza datos por nacionalidad, género y más</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Bootstrap JavaScript and dependencies -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Dashboard Migratorio Colombia</h5>
+                    <p>Una herramienta para el análisis de flujos migratorios</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="social-links">
+                        <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="javascript:void(0)" class="text-white"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Navbar shrink on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-shrink');
+            } else {
+                navbar.classList.remove('navbar-shrink');
+            }
+        });
+    </script>
 </body>
 </html>
