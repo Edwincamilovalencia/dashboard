@@ -8,32 +8,59 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #215732;
+            --secondary-color: #4CAF50;
+            --accent-color: #81C784;
+            --bg-color: #F1F8E9;
+            --gradient-start: #215732;
+            --gradient-end: #4CAF50;
+        }
+
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            overflow-x: hidden;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #ffffff 100%);
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .background-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20px 20px, rgba(33, 87, 50, 0.1) 2px, transparent 0),
+                radial-gradient(circle at 40px 40px, rgba(33, 87, 50, 0.05) 2px, transparent 0);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
         }
 
         .navbar {
-            background: rgba(26, 35, 126, 0.95);
+            background: rgba(33, 87, 50, 0.95);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             z-index: 1000;
             transition: 0.3s;
+            padding: 1rem 0;
         }
 
-        .navbar-shrink {
-            padding: 0.5rem 0;
+        .navbar-brand {
+            color: white !important;
+            font-weight: 600;
         }
 
         .nav-link {
             color: white !important;
             margin: 0 1rem;
             position: relative;
+            font-weight: 500;
         }
 
         .nav-link::after {
@@ -43,7 +70,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: white;
+            background-color: var(--accent-color);
             transition: width 0.3s;
         }
 
@@ -53,15 +80,16 @@
 
         section {
             padding: 100px 0;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-section {
-            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-content {
@@ -70,63 +98,155 @@
             z-index: 2;
         }
 
-        .dashboard-section {
-            background-color: #f8f9fa;
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
-        .features-section {
-            background-color: white;
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 2rem auto;
+            overflow: hidden;
+            border: 5px solid var(--accent-color);
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-custom {
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: white;
         }
 
         .feature-card {
+            background: white;
             padding: 2rem;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             height: 100%;
+            transition: transform 0.3s;
+            border: 1px solid rgba(129, 199, 132, 0.2);
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
         }
 
-        .floating-icon {
-            position: absolute;
-            color: rgba(255, 255, 255, 0.1);
-            animation: float 6s ease-in-out infinite;
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
         }
 
-        .icon-1 { top: 10%; left: 10%; font-size: 3rem; }
-        .icon-2 { top: 20%; right: 15%; font-size: 4rem; animation-delay: 1s; }
-        .icon-3 { bottom: 15%; left: 15%; font-size: 3.5rem; animation-delay: 2s; }
-        .icon-4 { bottom: 20%; right: 10%; font-size: 2.5rem; animation-delay: 3s; }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        .dashboard-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            position: relative;
         }
 
         .dashboard-iframe {
             width: 100%;
             height: 80vh;
             border: none;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         footer {
-            background: #1a237e;
+            background: var(--primary-color);
             color: white;
             padding: 3rem 0;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-icon {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            animation: float 6s infinite;
+            font-size: 2rem;
         }
     </style>
 </head>
 <body>
+    <div class="background-pattern"></div>
+    
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="javascript:void(0)">
+            <a class="navbar-brand" href="#">
                 <i class="fas fa-globe-americas me-2"></i>
                 Dashboard Migratorio
             </a>
@@ -139,10 +259,16 @@
                         <a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('inicio')">Inicio</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('quienes-somos')">Quiénes Somos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('dashboard')">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('beneficios')">Beneficios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('contacto')">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -151,30 +277,69 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero-section">
-        <i class="fas fa-globe floating-icon icon-1"></i>
-        <i class="fas fa-plane floating-icon icon-2"></i>
-        <i class="fas fa-map-marker-alt floating-icon icon-3"></i>
-        <i class="fas fa-passport floating-icon icon-4"></i>
-        
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
                     <h1 class="display-4 fw-bold mb-4">Dashboard Migratorio Colombia</h1>
                     <p class="lead mb-4">Explora y analiza los patrones migratorios de Colombia con nuestra herramienta interactiva de visualización de datos</p>
-                    <button onclick="scrollToSection('dashboard')" class="btn btn-light btn-lg px-4">
+                    <button onclick="scrollToSection('dashboard')" class="btn btn-custom btn-lg">
                         Explorar Dashboard <i class="fas fa-arrow-right ms-2"></i>
                     </button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/api/placeholder/600/400" alt="Dashboard Preview" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos Section -->
+    <section id="quienes-somos" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Quiénes Somos</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="team-card text-center">
+                        <div class="team-image">
+                            <img src="/api/placeholder/150/150" alt="Team Member" class="img-fluid">
+                        </div>
+                        <h4>Ana García</h4>
+                        <p class="text-muted">Directora de Análisis</p>
+                        <p class="px-4">Especialista en análisis de datos migratorios y tendencias demográficas.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card text-center">
+                        <div class="team-image">
+                            <img src="/api/placeholder/150/150" alt="Team Member" class="img-fluid">
+                        </div>
+                        <h4>Carlos Rodríguez</h4>
+                        <p class="text-muted">Desarrollador Principal</p>
+                        <p class="px-4">Experto en visualización de datos y desarrollo de dashboards.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card text-center">
+                        <div class="team-image">
+                            <img src="/api/placeholder/150/150" alt="Team Member" class="img-fluid">
+                        </div>
+                        <h4>María Martínez</h4>
+                        <p class="text-muted">Analista de Datos</p>
+                        <p class="px-4">Especialista en estadísticas migratorias y análisis predictivo.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Dashboard Section -->
-    <section id="dashboard" class="dashboard-section">
+    <section id="dashboard" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">Dashboard Interactivo</h2>
-            <div class="dashboard-iframe">
-                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" width="100%" height="100%"></iframe>
+            <h2 class="section-title text-center">Dashboard Interactivo</h2>
+            <div class="dashboard-container">
+                <div class="dashboard-iframe">
+                    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" width="100%" height="100%"></iframe>
+                </div>
             </div>
         </div>
     </section>
