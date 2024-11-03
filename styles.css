@@ -106,6 +106,12 @@ section {
     object-fit: contain;
 }
 
+@media (max-width: 576px) { /* Estilos específicos para pantallas pequeñas */
+    .custom-hero-image {
+        max-width: 90%;  /* Ajusta el tamaño de la imagen en móviles */
+    }
+}
+
 /* Ajustar la imagen para pantallas pequeñas */
 @media (max-width: 768px) {
     .custom-hero-image {
