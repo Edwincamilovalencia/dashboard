@@ -327,4 +327,59 @@ footer {
     transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
 }
 
+/* Estilo para el contenedor de preguntas */
+.questions-section {
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo más claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Botones de información */
+.btn-info {
+    border: none;
+    background-color: #17a2b8; /* Color de Bootstrap para el botón de información */
+    border-radius: 50%; /* Hacer el botón circular */
+    width: 40px; /* Ancho del botón */
+    height: 40px; /* Alto del botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; /* Tamaño del ícono */
+}
+
+/* Espaciado entre los botones */
+.btn-info.m-1 {
+    margin: 10px; /* Margen entre los botones */
+}
+
+.questions-section {
+    background-color: #f8f9fa; /* Fondo claro */
+    border: 1px solid #ced4da; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Ajustar el margen inferior para acercar */
+}
+
+.questions-section h3 {
+    font-weight: bold;
+}
+
+.questions-section p {
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.btn-info {
+    background-color: #17a2b8; /* Color del botón */
+    border: none; /* Sin borde */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-info:hover {
+    background-color: #138496; /* Color al pasar el mouse */
+}
+
+.dashboard-container {
+    margin-top: 20px; /* Ajustar el margen superior para alinear */
+}
+
 

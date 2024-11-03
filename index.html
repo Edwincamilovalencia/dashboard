@@ -10,6 +10,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
     
     <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -99,11 +107,93 @@
             </div>
         </div>
     </section>
-
     <!-- Dashboard Section -->
     <section id="dashboard" class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title text-center">Dashboard Interactivo</h2>
+            <h2 class="section-title text-center mb-4">Dashboard Interactivo</h2>
+            <div class="questions-section mb-4 p-4 rounded bg-light shadow">
+                <h3 class="text-center">Preguntas Clave</h3>
+                <p class="text-center text-muted">Selecciona el icono para visualizar la pregunta</p>
+                <div class="d-flex justify-content-center flex-wrap">
+                    <button type="button" class="btn btn-info btn-lg m-2" data-bs-toggle="modal" data-bs-target="#question1Modal">🔍</button>
+                    <button type="button" class="btn btn-info btn-lg m-2" data-bs-toggle="modal" data-bs-target="#question2Modal">🔍</button>
+                    <button type="button" class="btn btn-info btn-lg m-2" data-bs-toggle="modal" data-bs-target="#question3Modal">🔍</button>
+                    <button type="button" class="btn btn-info btn-lg m-2" data-bs-toggle="modal" data-bs-target="#question4Modal">🔍</button>
+                    <button type="button" class="btn btn-info btn-lg m-2" data-bs-toggle="modal" data-bs-target="#question5Modal">🔍</button>
+                </div>
+            </div>
+            
+            <!-- Modales -->
+            <div class="modal fade" id="question1Modal" tabindex="-1" aria-labelledby="question1Label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="question1Label">Pregunta 1</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ¿Cómo se vio afectada la llegada de inmigrantes de los países fronterizos (Brasil, Ecuador, Perú y Venezuela) a Colombia durante los años (2019 - 2022) de pandemia del COVID-19?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="question2Modal" tabindex="-1" aria-labelledby="question2Label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="question2Label">Pregunta 2</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ¿Cuáles son los principales países que más aportan turistas a Colombia en los últimos años?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="question3Modal" tabindex="-1" aria-labelledby="question3Label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="question3Label">Pregunta 3</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ¿En qué meses se registra el mayor volumen de ingresos de extranjeros a Colombia, según los datos históricos del 2012-2023, para identificar patrones estacionales de entrada al país?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="question4Modal" tabindex="-1" aria-labelledby="question4Label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="question4Label">Pregunta 4</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ¿En qué periodos del año se observa mayor diferencia entre la entrada de hombres y mujeres a Colombia, y esta brecha de género varía dependiendo de si es temporada alta o baja?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="question5Modal" tabindex="-1" aria-labelledby="question5Label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="question5Label">Pregunta 5</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ¿Cuál es la distribución de entradas de extranjeros a Colombia por año?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="dashboard-container">
                 <div class="dashboard-iframe">
                     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYzc5MDNkMzEtMjlkMC00NTY3LTg5MzgtMTQ2NTBjM2JlMWE3IiwidCI6IjRmMWUwNDRkLTNkNzAtNDk5MC1iMjZhLWI5NWYwYzY0MmUxYSIsImMiOjR9" width="100%" height="100%"></iframe>
@@ -159,7 +249,7 @@
                         <h4>Estamos aquí para ayudarte</h4>
                         <p>Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto con nosotros.</p>
                         <p><strong>Email:</strong> edcamilo2016@gmail.com</p>
-                        <p><strong>Teléfono:</strong> +57 3105364040</p>
+                        <p><strong>Teléfono:</strong> +57 3105364042</p>
                     </div>
                 </div>
                 <div class="col-md-6">
