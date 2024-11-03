@@ -114,8 +114,6 @@ section {
 }
 
 
-
-
 .hero-content {
     position: relative;
     z-index: 2; /* Asegura que el contenido esté por encima del overlay */
