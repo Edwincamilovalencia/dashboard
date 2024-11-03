@@ -93,6 +93,28 @@ section {
     backdrop-filter: blur(8px); /* Difuminar el fondo */
 }
 
+.custom-hero-image {
+    max-width: 120%; /* Aumentar el ancho máximo de la imagen */
+    height: 80vh; /* Mantener la proporción */
+    margin-top: 20px; /* Espacio superior */
+    border-radius: 10px; /* Bordes redondeados */
+    z-index: 2; /* Asegura que esté por encima del overlay */
+    position: relative; /* Para asegurar la posición */
+    display: block; /* Hacer que el margen funcione correctamente */
+    margin-left: auto; /* Centrar la imagen en el contenedor */
+    margin-right: 20px; /* Centrar la imagen en el contenedor */
+    object-fit: contain;
+}
+
+/* Ajustar la imagen para pantallas pequeñas */
+@media (max-width: 768px) {
+    .custom-hero-image {
+        max-width: 100%; /* Mantener 100% en pantallas pequeñas */
+    }
+}
+
+
+
 
 .hero-content {
     position: relative;
