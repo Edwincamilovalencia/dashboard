@@ -113,6 +113,19 @@ section {
     }
 }
 
+.custom-hero-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    border-radius: 15px; /* Bordes redondeados */
+    border: 5px solid transparent; /* Borde inicial transparente */
+}
+
+.custom-hero-image:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la imagen un 5% */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Añade una sombra más prominente */
+    filter: brightness(1.1); /* Aumenta el brillo de la imagen */
+    
+}
+
 
 .hero-content {
     position: relative;
@@ -290,4 +303,22 @@ footer {
 .icon-container .bi {
   color: black; /* Cambiar color a negro */
 }
+
+.features-section {
+    background: linear-gradient(135deg, #559763 0%, #ffffff 100%); /* Degradado de verde claro a blanco */
+    padding: 60px 0; /* Espaciado superior e inferior */
+    color: black; /* Cambiar el color del texto a negro para mejor visibilidad */
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con algo de transparencia */
+    border-radius: 10px; /* Bordes redondeados para las tarjetas */
+    padding: 20px; /* Espaciado interno */
+    transition: transform 0.3s ease; /* Transición suave para efectos de hover */
+}
+
+.feature-card:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
 
